@@ -63,5 +63,23 @@
             $this->assertEquals(4, $result);
             $this->assertEquals(1, $result2);
         }
+        function test_Coins_returnChange()
+        {
+            // arrange
+            $test_Coins = new Coins;
+            $input = 96;
+
+            // act
+            $result = $test_Coins->returnChange($input);
+
+            // assert
+            $this->assertEquals(array(
+                    'quarters' => 3,
+                    'dimes' => 2,
+                    'nickels' => 0,
+                    'pennies' => 1
+                ), $result
+            );
+        }
     }
 ?>
